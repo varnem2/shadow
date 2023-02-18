@@ -1,0 +1,999 @@
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash
+$ which git
+/mingw64/bin/git
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash
+$ git --version
+git version 2.39.0.windows.2
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash
+$ git init
+Initialized empty Git repository in C:/fortnight/dash/.git/
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ ls
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ ls -alt
+total 4
+drwxr-xr-x 1 owner 197121 0 Feb 17 20:35 .git/
+drwxr-xr-x 1 owner 197121 0 Feb 17 20:35 ./
+drwxr-xr-x 1 owner 197121 0 Feb 17 20:33 ../
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ ls
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ touch readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ ls
+readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ nano readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ cat readme.md
+hi
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        readme.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git add readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   readme.md
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git commit -m "adding the readme.md file"
+[master (root-commit) 737b04f] adding the readme.md file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ nano readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ cat readme.md
+hi
+
+test
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git diff readme.md
+diff --git a/readme.md b/readme.md
+index 45b983b..cd6cc5a 100644
+--- a/readme.md
++++ b/readme.md
+@@ -1 +1,3 @@
+ hi
++
++test
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git add readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   readme.md
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git commit -m "adding hi to readme.md"
+[master a0177bc] adding hi to readme.md
+ 1 file changed, 2 insertions(+)
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git log
+commit a0177bcd59db148d1ce87f36cbc78191352404d2 (HEAD -> master)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git checkout -b silo
+Switched to a new branch 'silo'
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git status
+On branch silo
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git logs
+git: 'logs' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git log
+commit a0177bcd59db148d1ce87f36cbc78191352404d2 (HEAD -> silo, master)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ nano readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git status
+On branch silo
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git add readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git commit -m "changing test to tst"
+[silo 19172c1] changing test to tst
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git status
+On branch silo
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git log
+commit 19172c1c523271d9ad421a00de1ca050db81f354 (HEAD -> silo)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:46:44 2023 -0500
+
+    changing test to tst
+
+commit a0177bcd59db148d1ce87f36cbc78191352404d2 (master)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git switch master
+Switched to branch 'master'
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ cat readme.md
+hi
+
+test
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ nano readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git add readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git commit -m "adding comment to readme.md"
+[master 432cc49] adding comment to readme.md
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git log
+commit 432cc4923fddc3405e1d8a25844ece42dc617860 (HEAD -> master)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:48:10 2023 -0500
+
+    adding comment to readme.md
+
+commit a0177bcd59db148d1ce87f36cbc78191352404d2
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git branch
+* master
+  silo
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git merge silo
+Auto-merging readme.md
+CONFLICT (content): Merge conflict in readme.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master|MERGING)
+$ ls
+readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master|MERGING)
+$ nano.exe
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master|MERGING)
+$ nano readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   readme.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master|MERGING)
+$ git add readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master|MERGING)
+$ git commit -m "merging silo and main"
+[master e2ba743] merging silo and main
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ cat readme.md
+hi
+
+tst -- we don't know what this does
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git log
+commit e2ba743553313a273a8df649e271d899a65e9652 (HEAD -> master)
+Merge: 432cc49 19172c1
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:50:45 2023 -0500
+
+    merging silo and main
+
+commit 432cc4923fddc3405e1d8a25844ece42dc617860
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:48:10 2023 -0500
+
+    adding comment to readme.md
+
+commit 19172c1c523271d9ad421a00de1ca050db81f354 (silo)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:46:44 2023 -0500
+
+    changing test to tst
+
+commit a0177bcd59db148d1ce87f36cbc78191352404d2
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git log --pretty
+commit e2ba743553313a273a8df649e271d899a65e9652 (HEAD -> master)
+Merge: 432cc49 19172c1
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:50:45 2023 -0500
+
+    merging silo and main
+
+commit 432cc4923fddc3405e1d8a25844ece42dc617860
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:48:10 2023 -0500
+
+    adding comment to readme.md
+
+commit 19172c1c523271d9ad421a00de1ca050db81f354 (silo)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:46:44 2023 -0500
+
+    changing test to tst
+
+commit a0177bcd59db148d1ce87f36cbc78191352404d2
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git log --graph --oneline --decorate
+*   e2ba743 (HEAD -> master) merging silo and main
+|\
+| * 19172c1 (silo) changing test to tst
+* | 432cc49 adding comment to readme.md
+|/
+* a0177bc adding hi to readme.md
+* 737b04f adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git remote
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git remote add origin git@github.com:varnem2/shadow.git
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push -u origin master
+The authenticity of host 'github.com (140.82.113.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ gh --help
+Work seamlessly with GitHub from the command line.
+
+USAGE
+  gh <command> <subcommand> [flags]
+
+CORE COMMANDS
+  auth:        Authenticate gh and git with GitHub
+  browse:      Open the repository in the browser
+  codespace:   Connect to and manage codespaces
+  gist:        Manage gists
+  issue:       Manage issues
+  pr:          Manage pull requests
+  release:     Manage releases
+  repo:        Manage repositories
+
+GITHUB ACTIONS COMMANDS
+  run:         View details about workflow runs
+  workflow:    View details about GitHub Actions workflows
+
+ADDITIONAL COMMANDS
+  alias:       Create command shortcuts
+  api:         Make an authenticated GitHub API request
+  completion:  Generate shell completion scripts
+  config:      Manage configuration for gh
+  extension:   Manage gh extensions
+  gpg-key:     Manage GPG keys
+  label:       Manage labels
+  search:      Search for repositories, issues, and pull requests
+  secret:      Manage GitHub secrets
+  ssh-key:     Manage SSH keys
+  status:      Print information about relevant issues, pull requests, and notifications across repositories
+
+HELP TOPICS
+  actions:     Learn about working with GitHub Actions
+  environment: Environment variables that can be used with gh
+  exit-codes:  Exit codes used by gh
+  formatting:  Formatting options for JSON data exported from gh
+  mintty:      Information about using gh with MinTTY
+  reference:   A comprehensive reference of all gh commands
+
+FLAGS
+  --help      Show help for command
+  --version   Show gh version
+
+EXAMPLES
+  $ gh issue create
+  $ gh repo clone cli/cli
+  $ gh pr checkout 321
+
+LEARN MORE
+  Use 'gh <command> <subcommand> --help' for more information about a command.
+  Read the manual at https://cli.github.com/manual
+
+
+
+A new release of gh is available: 2.21.2 → 2.23.0
+https://github.com/cli/cli/releases/tag/v2.23.0
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push -u origin master
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git config credential.helper store
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push -u origin master
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ gh auth login
+? What account do you want to log into? GitHub.com
+? You're already logged into github.com. Do you want to re-authenticate? Yes
+? What is your preferred protocol for Git operations? HTTPS
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: 70C2-4572
+Press Enter to open github.com in your browser...
+✓ Authentication complete.
+- gh config set -h github.com git_protocol https
+✓ Configured git protocol
+✓ Logged in as varnem2
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ gh config --help
+Display or change configuration settings for gh.
+
+Current respected settings:
+- git_protocol: the protocol to use for git clone and push operations (default: "https")
+- editor: the text editor program to use for authoring text
+- prompt: toggle interactive prompting in the terminal (default: "enabled")
+- pager: the terminal pager program to send standard output to
+- http_unix_socket: the path to a Unix socket through which to make an HTTP connection
+- browser: the web browser to use for opening URLs
+
+
+USAGE
+  gh config <command> [flags]
+
+AVAILABLE COMMANDS
+  get:         Print the value of a given configuration key
+  list:        Print a list of configuration keys and values
+  set:         Update configuration with a value for the given key
+
+INHERITED FLAGS
+  --help   Show help for command
+
+LEARN MORE
+  Use 'gh <command> <subcommand> --help' for more information about a command.
+  Read the manual at https://cli.github.com/manual
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ gh
+Work seamlessly with GitHub from the command line.
+
+USAGE
+  gh <command> <subcommand> [flags]
+
+CORE COMMANDS
+  auth:        Authenticate gh and git with GitHub
+  browse:      Open the repository in the browser
+  codespace:   Connect to and manage codespaces
+  gist:        Manage gists
+  issue:       Manage issues
+  pr:          Manage pull requests
+  release:     Manage releases
+  repo:        Manage repositories
+
+GITHUB ACTIONS COMMANDS
+  run:         View details about workflow runs
+  workflow:    View details about GitHub Actions workflows
+
+ADDITIONAL COMMANDS
+  alias:       Create command shortcuts
+  api:         Make an authenticated GitHub API request
+  completion:  Generate shell completion scripts
+  config:      Manage configuration for gh
+  extension:   Manage gh extensions
+  gpg-key:     Manage GPG keys
+  label:       Manage labels
+  search:      Search for repositories, issues, and pull requests
+  secret:      Manage GitHub secrets
+  ssh-key:     Manage SSH keys
+  status:      Print information about relevant issues, pull requests, and notifications across repositories
+
+HELP TOPICS
+  actions:     Learn about working with GitHub Actions
+  environment: Environment variables that can be used with gh
+  exit-codes:  Exit codes used by gh
+  formatting:  Formatting options for JSON data exported from gh
+  mintty:      Information about using gh with MinTTY
+  reference:   A comprehensive reference of all gh commands
+
+FLAGS
+  --help      Show help for command
+  --version   Show gh version
+
+EXAMPLES
+  $ gh issue create
+  $ gh repo clone cli/cli
+  $ gh pr checkout 321
+
+LEARN MORE
+  Use 'gh <command> <subcommand> --help' for more information about a command.
+  Read the manual at https://cli.github.com/manual
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ gh auth setup-git
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push --set-upstream origin master
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push --set-upstream origin master^C
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git remote remove origin
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git remote add origin https://github.com/varnem2/shadow
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push --set-upstream origin master
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (15/15), 1.12 KiB | 1.12 MiB/s, done.
+Total 15 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/varnem2/shadow
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git push --up-stream origin^C
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git checkout silo
+Switched to branch 'silo'
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git logs
+git: 'logs' is not a git command. See 'git --help'.
+
+The most similar command is
+        log
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git log
+commit 19172c1c523271d9ad421a00de1ca050db81f354 (HEAD -> silo)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:46:44 2023 -0500
+
+    changing test to tst
+
+commit a0177bcd59db148d1ce87f36cbc78191352404d2
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git push
+fatal: The current branch silo has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin silo
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git push --set-upstream origin silo
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'silo' on GitHub by visiting:
+remote:      https://github.com/varnem2/shadow/pull/new/silo
+remote:
+To https://github.com/varnem2/shadow
+ * [new branch]      silo -> silo
+branch 'silo' set up to track 'origin/silo'.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ ^C
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git status
+On branch silo
+Your branch is up to date with 'origin/silo'.
+
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (silo)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git log
+commit e2ba743553313a273a8df649e271d899a65e9652 (HEAD -> master, origin/master)
+Merge: 432cc49 19172c1
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:50:45 2023 -0500
+
+    merging silo and main
+
+commit 432cc4923fddc3405e1d8a25844ece42dc617860
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:48:10 2023 -0500
+
+    adding comment to readme.md
+
+commit 19172c1c523271d9ad421a00de1ca050db81f354 (origin/silo, silo)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:46:44 2023 -0500
+
+    changing test to tst
+
+commit a0177bcd59db148d1ce87f36cbc78191352404d2
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git branch
+* master
+  silo
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git staus
+git: 'staus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git checkout -b phone
+Switched to a new branch 'phone'
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git status
+On branch phone
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ nano.exe
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ nano readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ cat readme.md
+hi
+
+tst -- we don't know what this does
+
+
+asfdjlkdsf;kjl;djafkldf;jskl
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git add readme.md
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git commit -m "adding soem stuff"
+[phone e99eda8] adding soem stuff
+ 1 file changed, 3 insertions(+)
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git push
+fatal: The current branch phone has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin phone
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git push --set-upstream origin master
+Everything up-to-date
+branch 'master' set up to track 'origin/master'.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git push --set-upstream origin phone
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 308 bytes | 308.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'phone' on GitHub by visiting:
+remote:      https://github.com/varnem2/shadow/pull/new/phone
+remote:
+To https://github.com/varnem2/shadow
+ * [new branch]      phone -> phone
+branch 'phone' set up to track 'origin/phone'.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git branch
+  master
+* phone
+  silo
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git branch -D phone
+error: Cannot delete branch 'phone' checked out at 'C:/fortnight/dash'
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (phone)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git branch -D phone
+Deleted branch phone (was e99eda8).
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git fetch
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 625 bytes | 312.00 KiB/s, done.
+From https://github.com/varnem2/shadow
+   e2ba743..11cd449  master     -> origin/master
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git log
+commit e2ba743553313a273a8df649e271d899a65e9652 (HEAD -> master)
+Merge: 432cc49 19172c1
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:50:45 2023 -0500
+
+    merging silo and main
+
+commit 432cc4923fddc3405e1d8a25844ece42dc617860
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:48:10 2023 -0500
+
+    adding comment to readme.md
+
+commit 19172c1c523271d9ad421a00de1ca050db81f354 (origin/silo, silo)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:46:44 2023 -0500
+
+    changing test to tst
+
+commit a0177bcd59db148d1ce87f36cbc78191352404d2
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git pull
+Updating e2ba743..11cd449
+Fast-forward
+ readme.md | 3 +++
+ 1 file changed, 3 insertions(+)
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ git log
+commit 11cd4495f352ba762ffd8f6cca983c0bdac318fd (HEAD -> master, origin/master)
+Merge: e2ba743 e99eda8
+Author: Matthew Varner <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 21:12:11 2023 -0500
+
+    Merge pull request #1 from varnem2/phone
+
+    adding soem stuff
+
+commit e99eda879c648a80bb86dde866c66f1f8088cc19 (origin/phone)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 21:09:26 2023 -0500
+
+    adding soem stuff
+
+commit e2ba743553313a273a8df649e271d899a65e9652
+Merge: 432cc49 19172c1
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:50:45 2023 -0500
+
+    merging silo and main
+
+commit 432cc4923fddc3405e1d8a25844ece42dc617860
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:48:10 2023 -0500
+
+    adding comment to readme.md
+
+commit 19172c1c523271d9ad421a00de1ca050db81f354 (origin/silo, silo)
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:46:44 2023 -0500
+
+    changing test to tst
+
+commit a0177bcd59db148d1ce87f36cbc78191352404d2
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:43:36 2023 -0500
+
+    adding hi to readme.md
+
+commit 737b04fca381a026b9f42d8e34ac60e2b4556544
+Author: varnem2 <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 20:41:06 2023 -0500
+
+    adding the readme.md file
+
+owner@DESKTOP-NN5VM6D MINGW64 /c/fortnight/dash (master)
+$ Merge: e2ba743 e99eda8
+Author: Matthew Varner <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 21:12:11 2023 -0500
+
+    Merge pull request #1 from varnem2/phone
+
+    adding soem stuff
+Merge: e2ba743 e99eda8
+Author: Matthew Varner <matthew.varner2@gmail.com>
+Date:   Fri Feb 17 21:12:11 2023 -0500
+
+    Merge pull request #1 from varnem2/phone
+
